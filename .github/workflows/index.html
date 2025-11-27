@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фінансова грамотність: Все про Податки (Оновлено)</title>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #50e3c2;
+            --accent-color: #f5a623;
+            --text-color: #333;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --success: #28a745;
+            --error: #dc3545;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: #2c3e50;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+
+        .highlight {
+            background-color: #fff3cd;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        /* Styles for Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Quiz Styles */
+        .quiz-container {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--accent-color);
+        }
+
+        .question {
+            margin-bottom: 20px;
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 20px;
+        }
+
+        .question h3 {
+            margin-bottom: 15px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-btn {
+            padding: 10px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            text-align: left;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .option-btn:hover {
+            background-color: #f0f8ff;
+            border-color: var(--primary-color);
+        }
+
+        .option-btn.correct {
+            background-color: var(--success);
+            color: white;
+            border-color: var(--success);
+        }
+
+        .option-btn.incorrect {
+            background-color: var(--error);
+            color: white;
+            border-color: var(--error);
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>💰 Світ Податків</h1>
+    <p>Фінансова грамотність для 8 класу НУШ</p>
+</header>
+
+<div class="container">
+
+    <section class="card">
+        <h2>🧐 Що таке податки?</h2>
+        <p>Уявіть, що наша держава — це великий спільний будинок. <strong>Податки</strong> — це обов'язкові платежі, які ми всі скидаємось, щоб оплачувати "комуналку" цього будинку.</p>
+        <p><strong>Куди йдуть ці гроші?</strong></p>
+        <ul>
+            <li>🛡️ На армію та оборону</li>
+            <li>🏫 На школи та зарплати вчителям</li>
+            <li>🏥 На лікарні та медицину</li>
+            <li>🛣️ На будівництво доріг</li>
+            <li>👵 На пенсії бабусям і дідусям</li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2>🔎 Види податків</h2>
+        <p>Податки бувають двох основних видів:</p>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 250px; background: #e8f4fd; padding: 15px; border-radius: 8px;">
+                <h3>🔵 Прямі податки</h3>
+                <p>Ти платиш їх сам безпосередньо зі свого доходу.</p>
+                <p><em>Приклади:</em> Податок із зарплати, податок на квартиру.</p>
+            </div>
+            <div style="flex: 1; min-width: 250px; background: #fff3cd; padding: 15px; border-radius: 8px;">
+                <h3>🟠 Непрямі податки</h3>
+                <p>Вони "сховані" в ціні товару. Ти платиш їх на касі магазину.</p>
+                <p><em>Приклади:</em> ПДВ, Акциз (на бензин, цигарки).</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>💸 Податки на доходи</h2>
+        <p>З кожної заробленої гривні потрібно віддати частину на спільні потреби.</p>
+        <ul>
+            <li><strong>ПДФО (Податок на доходи фізичних осіб):</strong> <span class="highlight">18%</span></li>
+            <li><strong>Військовий збір:</strong> <span class="highlight">5%</span></li>
+        </ul>
+        <p>🎯 <strong>Загальна ставка податків на доходи:</strong> <span class="highlight">18% + 5% = 23%</span>.</p>
+        <p><em>Приклад:</em> Якщо ти заробив <span class="highlight">100 грн</span>, то <span class="highlight">23 грн</span> піде державі.</p>
+
+        <h3>📊 Детальний розрахунок на прикладі зарплати 20 000 грн:</h3>
+        <ul>
+            <li><strong>Зарплата (нараховано):</strong> 20 000 грн</li>
+            <li><strong>ПДФО (18%):</strong> 20 000 грн * 0.18 = 3 600 грн</li>
+            <li><strong>Військовий збір (5%):</strong> 20 000 грн * 0.05 = 1 000 грн</li>
+            <li><strong>Разом податків:</strong> 3 600 грн + 1 000 грн = <strong>4 600 грн</strong></li>
+            <li><strong>Зарплата "на руки":</strong> 20 000 грн - 4 600 грн = <strong>15 400 грн</strong></li>
+        </ul>
+        <p>✅ **Висновок:** Із зарплати 20 000 грн працівник отримує <strong>15 400 грн</strong>.</p>
+    </section>
+
+    <section class="card">
+        <h2>🛒 Податок на споживання (ПДВ)</h2>
+        <p>Найвідоміший податок — <strong>ПДВ (Податок на Додану Вартість)</strong>. Його ставка в Україні — <span class="highlight">20%</span>.</p>
+       
+        <h3>🛹 Як це працює на прикладі Скейтборда</h3>
+        <p>Скейт коштує у магазині 600 грн. З них 500 грн — ціна товару, а 100 грн — це ПДВ.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Етап</th>
+                    <th>Дія</th>
+                    <th>Податок державі</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>🌲 Лісоруб</td>
+                    <td>Продав дерево майстерні</td>
+                    <td>20 грн</td>
+                </tr>
+                <tr>
+                    <td>🔨 Майстерня</td>
+                    <td>Зробила дошку і колеса</td>
+                    <td>40 грн</td>
+                </tr>
+                <tr>
+                    <td>🏪 Магазин</td>
+                    <td>Продав скейт тобі</td>
+                    <td>40 грн</td>
+                </tr>
+                <tr>
+                    <td><strong>ВСЬОГО</strong></td>
+                    <td><strong>Ти купив скейт</strong></td>
+                    <td><strong>100 грн (сумарно)</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        <p>💡 <strong>Висновок:</strong> Податок платять по частинках усі бізнеси, але повну суму зі своєї кишені покриває <strong>кінцевий покупець (ти)</strong>.</p>
+    </section>
+
+    <section class="card">
+        <h2>🎁 Пільги та Знижки</h2>
+        <p>Держава іноді допомагає платити менше:</p>
+        <ul>
+            <li><strong>Податкова пільга:</strong> Це як "безкоштовний обід" або знижка для пенсіонерів чи людей з інвалідністю. Їм дозволяють не платити певний податок.</li>
+            <li><strong>Податкова знижка:</strong> Це як <strong>КЕШБЕК</strong> 💳. Ти спочатку платиш податок, а потім держава повертає тобі частину грошей, якщо ти витратив їх на навчання чи медицину.</li>
+        </ul>
+    </section>
+
+    <section class="quiz-container" id="quiz">
+        <h2 style="text-align: center;">🧠 Перевір себе! Тест (10 питань)</h2>
+        <div id="quiz-content">
+            </div>
+        <div id="result-area" style="text-align: center; margin-top: 20px; font-size: 1.2rem; font-weight: bold;"></div>
+    </section>
+
+</div>
+
+<footer>
+    <p>© 2024-2025 Урок фінансової грамотності. Навчаємось граючи!</p>
+</footer>
+
+<script>
+    const questions = [
+        {
+            question: "1. Що таке податок?",
+            options: ["Добровільний внесок на благодійність", "Обов'язковий платіж державі", "Оплата за комунальні послуги", "Гроші, які дарує держава"],
+            correct: 1
+        },
+        {
+            question: "2. Яка ставка ПДФО (податку на доходи) в Україні?",
+            options: ["10%", "15%", "18%", "20%"],
+            correct: 2
+        },
+        {
+            question: "3. ПДВ — це податок на...",
+            options: ["Доходи громадян", "Споживання (додану вартість)", "Майно", "Землю"],
+            correct: 1
+        },
+        {
+            question: "4. Яка стандартна ставка ПДВ в Україні?",
+            options: ["5%", "10%", "18%", "20%"],
+            correct: 3
+        },
+        {
+            question: "5. Хто фактично сплачує повну суму ПДВ та Акцизу?",
+            options: ["Президент", "Кінцевий покупець (споживач)", "Тільки завод-виробник", "Податкова служба"],
+            correct: 1
+        },
+        {
+            question: "6. Який з цих податків є ПРЯМИМ?",
+            options: ["ПДВ", "Акциз", "Податок на зарплату (ПДФО)", "Мито"],
+            correct: 2
+        },
+        {
+            question: "7. Що таке Військовий збір і яка його нова ставка?",
+            options: ["Внесок на армію, 1.5%", "Внесок на армію, 5%", "Штраф за порушення, 10%", "Внесок на форму, 20%"],
+            correct: 1
+        },
+        {
+            question: "8. На які товари зазвичай накладають Акцизний податок?",
+            options: ["Хліб та молоко", "Книги та зошити", "Алкоголь, тютюн, пальне", "Одяг та взуття"],
+            correct: 2
+        },
+        {
+            question: "9. Податкова знижка працює як:",
+            options: ["Штраф", "Кешбек (повернення частини грошей)", "Збільшення податку", "Благодійність"],
+            correct: 1
+        },
+        {
+            question: "10. Що буде, якщо свідомо не платити податки?",
+            options: ["Нічого страшного", "Дадуть грамоту", "Штрафи та відповідальність перед законом", "Звільнять від податків назавжди"],
+            correct: 2
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-content');
+
+    function loadQuiz() {
+        questions.forEach((q, index) => {
+            const qDiv = document.createElement('div');
+            qDiv.classList.add('question');
+           
+            const title = document.createElement('h3');
+            title.innerText = q.question;
+            qDiv.appendChild(title);
+
+            const optionsDiv = document.createElement('div');
+            optionsDiv.classList.add('options');
+
+            q.options.forEach((opt, i) => {
+                const btn = document.createElement('button');
+                btn.classList.add('option-btn');
+                btn.innerText = opt;
+                btn.onclick = () => checkAnswer(btn, i, q.correct, index);
+                optionsDiv.appendChild(btn);
+            });
+
+            const feedback = document.createElement('div');
+            feedback.id = `feedback-${index}`;
+            feedback.classList.add('feedback');
+            qDiv.appendChild(optionsDiv);
+            qDiv.appendChild(feedback);
+
+            quizContainer.appendChild(qDiv);
+        });
+    }
+
+    function checkAnswer(btn, selectedIndex, correctIndex, qIndex) {
+        const buttons = btn.parentElement.querySelectorAll('.option-btn');
+        const feedback = document.getElementById(`feedback-${qIndex}`);
+
+        buttons.forEach(b => b.disabled = true);
+
+        if (selectedIndex === correctIndex) {
+            btn.classList.add('correct');
+            feedback.style.color = 'green';
+            feedback.innerText = "✅ Правильно! Молодець!";
+        } else {
+            btn.classList.add('incorrect');
+            buttons[correctIndex].classList.add('correct');
+            feedback.style.color = 'red';
+            feedback.innerText = "❌ На жаль, ні. Правильна відповідь підсвічена зеленим.";
+        }
+        feedback.style.display = 'block';
+    }
+
+    loadQuiz();
+</script>
+
+</body>
+</html>
